@@ -16,35 +16,35 @@ public	class	BaseActor	extends	Actor {
     public	BaseActor()
     {
         super();
-        region	=	new	TextureRegion();
-        boundary	=	new	Rectangle();
-        velocityX	=	0;
-        velocityY	=	0;
+        region = new	TextureRegion();
+        boundary =	new	Rectangle();
+        velocityX =	0;
+        velocityY =	0;
     }
     public void	setTexture(Texture	t)
     {
-        int	w	=	t.getWidth();
-        int	h	=	t.getHeight();
-        setWidth(	w	);
-        setHeight(	h	);
-        region.setRegion(	t	);
+        int	w =	t.getWidth();
+        int	h =	t.getHeight();
+        setWidth(w);
+        setHeight(h);
+        region.setRegion(t);
     }
     public Rectangle getBoundingRectangle()
     {
-        boundary.set(	getX(),	getY(),	getWidth(),	getHeight()	);
+        boundary.set(getX(),getY(),	getWidth(),	getHeight());
         return	boundary;
     }
-    public void act(float	dt)
+    public void act(float dt)
     {
-        super.act(	dt	);
-        moveBy(	velocityX	*	dt,	velocityY	*	dt	);
+        super.act(dt);
+        moveBy(velocityX * dt, velocityY * dt);
     }
     public	void	draw(Batch	batch,	float	parentAlpha)
     {
-        Color	c	=	getColor();
-        batch.setColor(c.r,	c.g,	c.b,	c.a);
-        if	( isVisible() )
-            batch.draw(	region,	getX(),	getY(),	getOriginX(), getOriginY(), getWidth(),	getHeight(),
-                        getScaleX(), getScaleY(),	getRotation()	);
+        Color c = getColor();
+        batch.setColor(c.r,	c.g, c.b, c.a);
+        if	(isVisible())
+            batch.draw(region,	getX(),	getY(),	getOriginX(), getOriginY(), getWidth(),	getHeight(),
+                        getScaleX(), getScaleY(),getRotation());
     }
 }
