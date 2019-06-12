@@ -6,7 +6,7 @@ import com.mygdx.game.*;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new StartingScreen(), config);
+		Audio audio = new Audio();
+		new LwjglApplication(new StartingScreen(), audio);
 	}
 }
