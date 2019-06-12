@@ -8,4 +8,12 @@ public abstract class Note
       noteNum = n;
       timeInSong = t;
   }
+  private double getTime()
+  {
+    return timeInSong;
+  }
+  private int getNoteNum()
+  {
+    return noteNum;
+  }
 }
