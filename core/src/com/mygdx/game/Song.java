@@ -26,25 +26,6 @@ public class Song
         bpm = b;
         songPosition = (float)(AudioSettings.dspTime – dsptimesong) * bpm – offset;
     }
-    
-public class VLC extends Application 
-{
-    private void playMedia() 
-    {
-        URL resource = getClass().getResource(fileName);
-        System.out.println(resource.toString());
-        Media media = new Media(resource.toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.play();
-    }
-    public static void main(String args[]) {
-        new VLC().playMedia();
-    }
-    @Override
-    public void start(Stage stage) throws Exception 
-    {
-    }
-}
 
     //Offset: Start time - song start;
 
