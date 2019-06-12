@@ -1,19 +1,5 @@
-public class VLC extends Application 
+public class Audio
 {
-    private void playMedia() 
-    {
-        URL resource = getClass().getResource(Song.getfileName());
-        System.out.println(resource.toString());
-        Media media = new Media(resource.toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.play();
-        System.out.println("Playing...");
-    }
-    public static void main(String args[]) {
-        new VLC().playMedia();
-    }
-    @Override
-    public void start(Stage stage) throws Exception 
-    {
-    }
+    music = Gdx.audio.newMusic(Gdx.files.internal("Electro_-_Noisestorm_-_Surge_Original_Mix_Monstercat_EP_Release.mp3");
+    music.play();
  }
