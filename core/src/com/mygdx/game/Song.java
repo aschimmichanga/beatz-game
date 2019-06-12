@@ -6,17 +6,21 @@ import java.util.List;
 public class Song
 {
 
-    private int offset;
-    private songPosition;
-    private int t = Song.songPosition;//at end
-    private int bpm = t/60;
-    private int beatLength =  60/bpm;
-    List<Note> beatmap = new List<Note>();
+    private double offset;
+    private double songPosition;
+    private int t = Song.songPosition;//at end --- what is this for exactly?
+    private int bpm;
+    private double beatLength =  60/bpm;
+    private String songName;
+    List<Note> beatmap = new List<Note>(); 
 
-    public Song()
+    public Song(String s, double o, int b)
     {
-        offset = .2f;
-        songPosition = (float)(AudioSettings.dspTime – dsptimesong) * song.pitch – offset;
+        offset = o;
+        songname = s;
+        bpm = b;
+        songPosition = (float)(AudioSettings.dspTime – dsptimesong) * bpm – offset;
+        
     }
 
 }
