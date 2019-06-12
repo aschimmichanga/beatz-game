@@ -1,4 +1,4 @@
-public abstract class DoubleNote extends Note
+public class DoubleNote extends Note
 {
     private int secondNoteNum;
         public DoubleNote(int n, int nn, int t) //nn is the second note #
@@ -6,4 +6,12 @@ public abstract class DoubleNote extends Note
             super(n, t);
             secondNoteNum = nn;
         }
+    private double getTime()
+  {
+    return timeInSong;
+  }
+  private int getNoteNum()
+  {
+    return noteNum;
+  }
 }
