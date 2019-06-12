@@ -8,10 +8,14 @@ public class DoubleNote extends Note
         }
     private double getTime()
   {
-    return timeInSong;
+    super.getTime();
   }
   private int getNoteNum()
   {
-    return noteNum;
+    super.getNoteNum();
+  }
+  private int getSecondNoteNum()
+  {
+    return secondNoteNum;
   }
 }
