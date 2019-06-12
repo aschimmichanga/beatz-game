@@ -8,7 +8,7 @@ public class Scorestreaks {
     private int good = 0;
     private int miss = 0;
 
-    public Scorestreaks()
+    public ScoreStreaks()
     {
         timeElapsed = timeArrived - timeHit;
 
