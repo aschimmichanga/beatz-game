@@ -10,11 +10,13 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import	com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.mygdx.game.utils.AnimatedActor;
+import com.mygdx.game.utils.BaseActor;
 
 public	class	Piece	extends	Game {
     public Stage mainStage;
-    private	AnimatedActor mousey;
-    private	BaseActor	cheese;
+    private AnimatedActor mousey;
+    private BaseActor cheese;
     private BaseActor floor;
     private	BaseActor	winText;
     private boolean win;

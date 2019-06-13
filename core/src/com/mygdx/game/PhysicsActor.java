@@ -2,7 +2,9 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.math.MathUtils;
 import	com.badlogic.gdx.math.Vector2;
-public	class	PhysicsActor	extends	AnimatedActor
+import com.mygdx.game.utils.AnimatedActor;
+
+public	class	PhysicsActor	extends AnimatedActor
 {
     private	Vector2	velocity;
     private	Vector2	acceleration;				//	maximum	speed

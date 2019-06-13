@@ -1,35 +1,36 @@
 package com.mygdx.game;
 
-import java.util.List;
-import java.net.URL;
-import javafx.application.Application;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
+import java.util.ArrayList;
 
 //OLIVIA/ANUHYA
 public class Song
 {
-
-    private double offset;
-    private double songPosition;
-    private int t = Song.songPosition;//at end --- what is this for exactly?
-    private int bpm;
-    private double beatLength =  60/bpm;
+    //DO NOT SET INITIAL VALUES OUTSIDE OF THE CONSTRUCTOR!!!!!!
     private String fileName; // "xxx.mp3"
-    List<Note> beatmap = new List<Note>(); 
+    private double offset;
+    private int bpm;
+    private int t;
+    private double songPosition;
+    private double beatLength;
+    private ArrayList<Note> beatmap;
 
-    public Song(String f, double o, int b)
+    //please use descriptive variables... f, o, and b stand for fall out boy to me
+    //keep everything in the same order... ugly code drives people insane
+    public Song(String file, double o, int b)
     {
+        fileName = file;
         offset = o;
-        fileName = s;
         bpm = b;
-        songPosition = (float)(AudioSettings.dspTime – dsptimesong) * bpm – offset;
+        t = Song.songPosition;//at end --- what is this for exactly?
+        songPosition = ((float)(AudioSettings.dspTime) – dsptimesong) * bpm – offset;
+        beatLength =  60.0 / bpm;
+        beatmap = new ArrayList<Note>();
     }
     private String getFileName()
     {
         return fileName;
     }
+    //finish writing the setters and getters
 }
 
     //Offset: Start time - song start;

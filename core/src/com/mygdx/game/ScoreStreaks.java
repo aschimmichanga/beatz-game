@@ -1,6 +1,6 @@
 package com.mygdx.game;
 
-public class Scorestreaks {
+public class ScoreStreaks {
 
     private int timeElapsed;
     private int scoreValue = 0;
