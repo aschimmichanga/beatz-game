@@ -1,21 +1,21 @@
+package com.mygdx.game;
+
 public class DoubleNote extends Note
 {
-    private int secondNoteNum;
-        public DoubleNote(int n, int nn, int t) //nn is the second note #
-        {
-            super(n, t);
-            secondNoteNum = nn;
-        }
-    private double getTime()
-  {
-    super.getTime();
-  }
-  private int getNoteNum()
-  {
-    super.getNoteNum();
-  }
-  private int getSecondNoteNum()
-  {
-    return secondNoteNum;
-  }
+    private int firstNote;
+    private int secondNote;
+    public DoubleNote(String notesAndTime)
+    {
+        super(notesAndTime);
+        firstNote = getNotes() / 10;
+        secondNote = getNotes() % 10;
+    }
+
+    //setters
+    public void setFirstNote(int first) {firstNote = first;}
+    public void setSecondNote(int second) {secondNote = second;}
+
+    //getters
+    public int getFirstNote(){return firstNote;}
+    public int getSecondNote() {return secondNote;}
 }

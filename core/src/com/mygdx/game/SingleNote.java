@@ -1,15 +1,14 @@
+package com.mygdx.game;
+
+//ASHNA
+
 public class SingleNote extends Note
 {
-    public SingleNote(int n, int t)
+    public SingleNote(String noteAndTime)
     {
-        super(n, t);
+        super(noteAndTime);
     }
-    private double getTime()
-    {
-        super.getTime();
-    }
-    private int getNoteNum()
-    {
-        super.getNoteNum();
-    }
+
+    //getters (to avoid errors from confusion)
+    public int getNote() { return getNotes();}
 }

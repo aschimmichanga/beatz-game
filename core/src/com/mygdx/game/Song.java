@@ -9,7 +9,7 @@ public class Song
     private String fileName; // "xxx.mp3"
     private double offset;
     private int bpm;
-    private int t;
+    private double time;
     private double songPosition;
     private double beatLength;
     private ArrayList<Note> beatmap;
@@ -21,7 +21,7 @@ public class Song
         fileName = file;
         offset = o;
         bpm = b;
-        t = Song.songPosition;//at end --- what is this for exactly?
+        time = songPosition;//at end --- what is this for exactly?
         songPosition = ((float)(AudioSettings.dspTime) – dsptimesong) * bpm – offset;
         beatLength =  60.0 / bpm;
         beatmap = new ArrayList<Note>();
