@@ -11,7 +11,7 @@ import	com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import	com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.mygdx.game.utils.BaseActor;
 
-public class Menu extends com.mygdx.game.BaseScreen
+public class Menu extends com.mygdx.game.utils.BaseScreen
 {
     public Menu (Game g)
     {
@@ -42,7 +42,7 @@ public class Menu extends com.mygdx.game.BaseScreen
     public	boolean	keyDown(int	keycode)
     {
         if	(keycode	==	Keys.S)
-            game.setScreen(	new	CheeseLevel(game));
+            game.setScreen(	new	BeatzLevel(game, 1)); //TODO: Config a selection menu
         return	false;
     }
 }

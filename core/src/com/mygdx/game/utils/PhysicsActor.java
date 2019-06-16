@@ -1,5 +1,7 @@
 package com.mygdx.game.utils;
 
+//ASHNA
+
 import com.badlogic.gdx.math.MathUtils;
 import	com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.utils.AnimatedActor;
@@ -36,11 +38,25 @@ public	class	PhysicsActor	extends AnimatedActor
     	velocity.y	=	speed	*	MathUtils.sinDeg(angleDeg);
     	}
     	//	acceleration/deceleration	methods
-        //	public	void	setAccelerationXY(float	ax,	float	ay)
-        //	{
-        //	acceleration.set(ax,ay);
-        //	}
-        //	public	void	addAccelerationXY(float	ax,	float	ay)
-        //	{		acceleration.add(ax,ay);		}				//	set	acceleration	from	angle	and	speed				public	void	setAccelerationAS(float	angleDeg,	float	speed)				{								acceleration.x	=	speed	*	MathUtils.cosDeg(angleDeg);								acceleration.y	=	speed	*	MathUtils.sinDeg(angleDeg);				}				public	void	setDeceleration(float	d)				{		deceleration	=	d;		} In	addition,	related	utility	methods	determine	the	speed	and	angle	of	motion	of	the actor,	change	the	current	speed,	and	accelerate	in	the	direction	the	actor	is	currently facing: public	float	getSpeed()				{		return	velocity.len();		}				public	void	setSpeed(float	s)				{		velocity.setLength(s);		}				public	void	setMaxSpeed(float	ms)				{		maxSpeed	=	ms;		}				public	float	getMotionAngle()				{		return	MathUtils.atan2(velocity.y,	velocity.x) *	MathUtils.radiansToDegrees;		}
-    public	void	setAutoAngle(boolean	b)				{		autoAngle	=	b;		}				public	void	accelerateForward(float	speed)				{		setAccelerationAS(	getRotation(),	speed	);		}
+        	public	void	setAccelerationXY(float	ax,	float	ay)
+        	{
+        	acceleration.set(ax,ay);
+        	}
+        	public	void	addAccelerationXY(float	ax,	float	ay)
+        	{		acceleration.add(ax,ay);		}
+        	//	set	acceleration	from	angle	and	speed
+            	public	void	setAccelerationAS(float	angleDeg,	float	speed)
+                {
+                    acceleration.x	=	speed	*	MathUtils.cosDeg(angleDeg);
+                    acceleration.y	=	speed	*	MathUtils.sinDeg(angleDeg);
+                }
+                public	void	setDeceleration(float	d)				{		deceleration	=	d;		}
+
+                //Related	utility	methods	determine	the	speed	and	angle	of	motion	of	the actor,	change	the	current	speed,	and	accelerate	in	the	direction	the	actor	is	currently facing:
+                 public	float	getSpeed()				        {		return	velocity.len();		}
+                 public	void	setSpeed(float	s)				{		velocity.setLength(s);		}
+                 public	void	setMaxSpeed(float	ms)			{		maxSpeed	=	ms;		    }
+                 public	float	getMotionAngle()				{		return	MathUtils.atan2(velocity.y,	velocity.x) *	MathUtils.radiansToDegrees;	}
+                 public	void	setAutoAngle(boolean	b)		{		autoAngle	=	b;		    }
+                 public	void	accelerateForward(float	speed)  {		setAccelerationAS(getRotation(), speed);	}
 }

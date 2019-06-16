@@ -1,4 +1,6 @@
-package com.mygdx.game;
+package com.mygdx.game.utils;
+
+//ASHNA
 
 import	com.badlogic.gdx.Screen;
 import	com.badlogic.gdx.InputProcessor;

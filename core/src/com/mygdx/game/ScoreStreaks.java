@@ -1,6 +1,6 @@
 package com.mygdx.game;
 
-//ASHNA
+//ANUHYA / ASHNA
 
 public class ScoreStreaks {
 

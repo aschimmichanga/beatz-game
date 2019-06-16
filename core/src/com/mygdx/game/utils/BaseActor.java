@@ -1,5 +1,7 @@
 package com.mygdx.game.utils;
 
+//ASHNA
+
 import	com.badlogic.gdx.scenes.scene2d.Actor;
 import	com.badlogic.gdx.graphics.g2d.Batch;
 import	com.badlogic.gdx.graphics.Texture;
@@ -39,7 +41,7 @@ public	class	BaseActor	extends	Actor {
         super.act(dt);
         moveBy(velocityX * dt, velocityY * dt);
     }
-    public	void	draw(Batch	batch,	float	parentAlpha)
+    public	void draw(Batch	batch,	float	parentAlpha)
     {
         Color c = getColor();
         batch.setColor(c.r,	c.g, c.b, c.a);

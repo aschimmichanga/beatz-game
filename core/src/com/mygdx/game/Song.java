@@ -5,7 +5,6 @@ import java.util.ArrayList;
 //OLIVIA/ANUHYA
 public class Song
 {
-    //DO NOT SET INITIAL VALUES OUTSIDE OF THE CONSTRUCTOR!!!!!!
     private String fileName; // "xxx.mp3"
     private double offset;
     private int bpm;
@@ -14,8 +13,6 @@ public class Song
     private double beatLength;
     private ArrayList<Note> beatmap;
 
-    //please use descriptive variables... f, o, and b stand for fall out boy to me
-    //keep everything in the same order... ugly code drives people insane
     public Song(String file, double o, int b)
     {
         fileName = file;
@@ -25,6 +22,7 @@ public class Song
         songPosition = ((float)(AudioSettings.dspTime) – dsptimesong) * bpm – offset;
         beatLength =  60.0 / bpm;
         beatmap = new ArrayList<Note>();
+
     }
     private String getFileName()
     {
