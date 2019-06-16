@@ -21,10 +21,10 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
     public void create()
     {
         BaseActor background = new BaseActor();
-        background.setTexture(new Texture(Gdx.files.internal("assets/tiles-menu.jpg")));
+        background.setTexture(new Texture(Gdx.files.internal("assets/findbackground.jpg")));
         uiStage.addActor(background);
         BaseActor titleText	= new BaseActor();
-        titleText.setTexture( new Texture(Gdx.files.internal("assets/cheese-please.png"))	);
+        titleText.setTexture( new Texture(Gdx.files.internal("assets/Title.png"))	);
         titleText.setPosition(20,100	);
         uiStage.addActor(titleText);
         BitmapFont	font	=	new	BitmapFont();
