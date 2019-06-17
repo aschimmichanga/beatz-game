@@ -19,7 +19,7 @@ public class Song
         offset = o;
         bpm = b;
         time = songPosition;//at end --- what is this for exactly?
-        songPosition = ((float)(AudioSettings.dspTime) – dsptimesong) * bpm – offset;
+        //songPosition = ((float)(AudioSettings.dspTime) – dsptimesong) * bpm – offset;
         beatLength =  60.0 / bpm;
         beatmap = new ArrayList<Note>();
 

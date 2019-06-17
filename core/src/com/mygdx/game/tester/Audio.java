@@ -1,8 +1,9 @@
-package com.mygdx.game;
+package com.mygdx.game.tester;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 
 
@@ -10,10 +11,11 @@ import com.badlogic.gdx.audio.Sound;
 
 public class Audio implements ApplicationListener
 {
-    private Sound music;
+    private Music music;
+
     public void create()
     {
-        music = Gdx.audio.newSound(Gdx.files.internal("ElectroSurge.mp3"));
+        music = Gdx.audio.newMusic(Gdx.files.internal("ElectroSurge.mp3"));
         music.play();
     }
 
@@ -28,7 +30,7 @@ public class Audio implements ApplicationListener
     @Override
     public void render()
     {
-        music.play(0.5f);
+        music.play();
 
 
         update();

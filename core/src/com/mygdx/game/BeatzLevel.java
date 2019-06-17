@@ -26,8 +26,8 @@ public	class	BeatzLevel	extends com.mygdx.game.utils.BaseScreen {
     private ArrayList<Note> noteList;
 
     //	game	world	 TODO
-    final	int	mapWidth	=	640;
-    final	int	mapHeight	=	480;
+    final	int	mapWidth	=	1280;
+    final	int	mapHeight	=	600;
 
     public	BeatzLevel(Game g, int songNumber)
     {
