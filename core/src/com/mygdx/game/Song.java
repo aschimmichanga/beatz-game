@@ -18,6 +18,7 @@ public class Song
         fileName = file;
         offset = o;
         bpm = b;
+        music = Audio.newMusic(fileName);
         songPosition = ((float)(music.getPosition() / 60.0) * bpm – offset); //calcs what beat it's at out of total beats,
         // assuming pos is in seconds
         beatLength =  60.0 / bpm;
@@ -33,6 +34,8 @@ public class Song
 
     private double getBeatLength() { return beatLength; }
     //finish writing the setters and getters
+
+    private Music getMusic() {return music;}
 }
 
     //Offset: Start time - song start;
