@@ -1,6 +1,9 @@
 package com.mygdx.game;
 
 import java.util.ArrayList;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.mygdx.game.utils;
 
 //OLIVIA/ANUHYA
 public class Song
@@ -19,7 +22,7 @@ public class Song
         offset = o;
         bpm = b;
         music = Audio.newMusic(fileName);
-        songPosition = ((float)(music.getPosition() / 60.0) * bpm – offset); //calcs what beat it's at out of total beats,
+        songPosition = (float)(music.getPosition() / 60.0) * bpm – offset; //calcs what beat it's at out of total beats,
         // assuming pos is in seconds
         beatLength =  60.0 / bpm;
         beatmap = new ArrayList<Note>();

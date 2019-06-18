@@ -1,10 +1,10 @@
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.mygdx.game.utils;
+import assets.ElectroSurge.mp3;
+
 public class SongPosTester
 {
-    import com.badlogic.gdx.Game;
-    import com.badlogic.gdx.Gdx;
-    import com.mygdx.game.utils;
-    import assets.ElectroSurge.mp3;
-
 
     public static void main(String[] args)
     {
