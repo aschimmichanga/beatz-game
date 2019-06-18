@@ -1,4 +1,33 @@
 public class Input
 {
-  return 0;
+  public boolean onePressed = false;
+  public boolean twoPressed = false;
+  public boolean threePressed = false;
+  public boolean fourPressed = false;
+  public boolean oneReleased = false;
+  public boolean twoReleased = false;
+  public boolean threeReleased = false;
+  public boolean fourReleased = false;
+
+  //every time a beat passes, these must be reset to false
+
+public static void main(String[] args)
+{
+  if (Gdx.input.isKeyPressed(Input.Keys.NUM_1) == true)
+    onePressed = true;
+  if (Gdx.input.isKeyPressed(Input.Keys.NUM_2) == true)
+    twoPressed = true;
+  if (Gdx.input.isKeyPressed(Input.Keys.NUM_3) == true)
+     threePressed = true;
+  if (Gdx.input.isKeyPressed(Input.Keys.NUM_4) == true)
+    fourPressed = true;
+  if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1) == true)
+    oneReleased = true;
+  if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2) == true)
+    twoReleased = true;
+  if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3) == true)
+     threeReleased = true;
+  if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_4) == true)
+     fourReleased = true;
+}
 }
