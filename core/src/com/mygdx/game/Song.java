@@ -43,3 +43,7 @@ public class Song
 
     //Offset: Start time - song start;
 
+    //LISSAN - Song Objects (made offset 0 to fill in the gaps since we no longer need it):
+    //Song firstSong = new Song("ElectroSurge.mp3", 0, 128);
+    //Song secondSong = new Song("Jackson 5 - I Want You Back.mp3", 0, 98);
+
