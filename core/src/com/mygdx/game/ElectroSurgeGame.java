@@ -50,7 +50,25 @@ public	class ElectroSurgeGame extends BaseScreen {
     }
     public	void	create()
     {
-
+        Path path = Paths.get(fileName);
+        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            while (true) {
+                String noteList = reader.readLine();
+                int charsRemaining = noteList.length();
+                int startingPt = 0;
+               while (charsRemaining > 0)
+                {
+                        String note = noteList.substring(startingPt, ",") + (",", ",");
+                        Note n = new Note(note);
+                        charsRemaining -= note.length();
+                        startingPt += note.length();
+                }
+                if (line == null)
+                {
+                    break;
+                }
+            }
+        }
     }
     public	void	update(float	dt)
     {

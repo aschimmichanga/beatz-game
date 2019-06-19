@@ -17,11 +17,11 @@ public class Note extends BaseActor {
   public Note(String notesAndTime) {
     //initialization
     firstNote = 0;
+    //single note: note1,time,
     secondNote = 0;
     timeInSong = 0;
 
     //file formatting template for reference:
-    //single note: note1,time,
     //double note: note1note2,time,
     int tempNotes = Integer.parseInt(notesAndTime.substring(0, notesAndTime.indexOf(",")));
     if (tempNotes > 4) {
