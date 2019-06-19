@@ -48,20 +48,23 @@ public	class ElectroSurgeGame extends BaseScreen {
             text = text.substring(secondCommaIndex + 1);
         }
     }
-    public	void	create()
+    public	void create()
     {
         Path path = Paths.get(fileName);
         try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            while (true) {
+            while (true)
+            {
                 String noteList = reader.readLine();
                 int charsRemaining = noteList.length();
                 int startingPt = 0;
+                int x = 0;
                while (charsRemaining > 0)
                 {
                         String note = noteList.substring(startingPt, ",") + (",", ",");
-                        Note n = new Note(note);
+                        noteList[x] = new Note(note);
                         charsRemaining -= note.length();
                         startingPt += note.length();
+                        x++;
                 }
                 if (line == null)
                 {
