@@ -1,6 +1,5 @@
 package com.mygdx.game;
 
-import	com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import	com.badlogic.gdx.Input.Keys;
 import	com.badlogic.gdx.graphics.Color;
@@ -13,7 +12,7 @@ import com.mygdx.game.utils.BaseActor;
 
 public class StartScreen extends com.mygdx.game.utils.BaseScreen
 {
-    public StartScreen (Game g)
+    public StartScreen (com.mygdx.game.utils.BaseGame g)
     {
         super(g);
     }

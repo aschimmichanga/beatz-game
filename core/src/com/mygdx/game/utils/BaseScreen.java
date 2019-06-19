@@ -4,7 +4,6 @@ package com.mygdx.game.utils;
 
 import	com.badlogic.gdx.Screen;
 import	com.badlogic.gdx.InputProcessor;
-import	com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import	com.badlogic.gdx.graphics.GL20;
 import	com.badlogic.gdx.scenes.scene2d.Stage;
@@ -13,20 +12,20 @@ import	com.badlogic.gdx.InputMultiplexer;
 
 public abstract class BaseScreen implements	Screen,	InputProcessor
 {
-    protected Game game;
+    protected com.mygdx.game.utils.BaseGame BaseGame;
     protected Stage	mainStage;
 
     protected Stage	uiStage;
 
-    //game window dimensions
+    //BaseGame window dimensions
     public final int viewWidth	= 1280;
     public final int viewHeight	= 800;
 
     private	boolean	paused;
 
-    public	BaseScreen(Game	g)
+    public	BaseScreen(BaseGame	g)
     {
-        game	=	g;
+        BaseGame	=	g;
         mainStage = new	Stage(	new	FitViewport(viewWidth,	viewHeight));
         uiStage	= new Stage(	new	FitViewport(viewWidth,	viewHeight));
         paused = false;
@@ -37,11 +36,11 @@ public abstract class BaseScreen implements	Screen,	InputProcessor
 
     public	abstract	void	create();
     public	abstract	void	update(float dt);
-    //	game loop	code;	update,	then render.
+    //	BaseGame loop	code;	update,	then render.
     public	void	render(float	dt)
     {
         uiStage.act(dt);
-    //	only	pause	gameplay	events,	not	UI	events
+    //	only	pause	BaseGameplay	events,	not	UI	events
         if	(	!isPaused()	)
         {
             mainStage.act(dt);

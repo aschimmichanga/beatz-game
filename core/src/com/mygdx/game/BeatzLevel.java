@@ -1,6 +1,5 @@
 package com.mygdx.game;
 
-import	com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import	com.badlogic.gdx.scenes.scene2d.Actor;
@@ -8,6 +7,7 @@ import	com.badlogic.gdx.scenes.scene2d.ui.Label;
 import	com.badlogic.gdx.scenes.scene2d.InputListener;
 import	com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.mygdx.game.utils.BaseActor;
+import com.mygdx.game.utils.BaseGame;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,7 @@ public	class	BeatzLevel	extends com.mygdx.game.utils.BaseScreen {
     final	int	mapWidth	=	1280;
     final	int	mapHeight	=	600;
 
-    public	BeatzLevel(Game g, int songNumber)
+    public	BeatzLevel(com.mygdx.game.utils.BaseGame g, int songNumber)
     {
         super(g);
 
