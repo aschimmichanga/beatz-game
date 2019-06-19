@@ -7,7 +7,7 @@ import com.badlogic.gdx.audio.Music;
 
 //ASHNA
 
-public class Audio implements ApplicationListener
+public class AudioTester implements ApplicationListener
 {
     private Music music;
 

@@ -4,7 +4,6 @@ import	com.badlogic.gdx.Gdx;
 import	com.badlogic.gdx.graphics.Color;
 import	com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -15,7 +14,6 @@ import	com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mygdx.game.utils.BaseActor;
-import com.sun.xml.internal.bind.v2.TODO;
 
 public class Menu extends com.mygdx.game.utils.BaseScreen
 {
@@ -45,21 +43,40 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
         //move to next row
         t.row();
 
-        //adding the Start button to the UI
-        Texture	playTexture	=	new	Texture(Gdx.files.internal("assets/Guitar.png"));
-        Button.ButtonStyle playStyle	=	new Button.ButtonStyle();
-        playStyle.up	=	new TextureRegionDrawable(new TextureRegion(playTexture));
-        Button	playButton	=	new	Button(	playStyle);
+        //adding the Electrosurge button to the UI
+        Texture	electroSurgeTexture	=	new	Texture(Gdx.files.internal("assets/Guitar.png"));
+        Button.ButtonStyle electroSurgeStyle	=	new Button.ButtonStyle();
+        electroSurgeStyle.up	=	new TextureRegionDrawable(new TextureRegion(electroSurgeTexture));
+        Button	electroSurgeButton	=	new	Button(	electroSurgeStyle);
 
-        playButton.addListener(new	InputListener()
+        electroSurgeButton.addListener(new	InputListener()
         {
             public	boolean	touchDown	(InputEvent event, float	x, float	y, int	pointer, int	button)
             {
-                //TODO: Implement moving to the next screen (game level)
+                game.setScreen(	new	Menu(game));
                 return	true;
             }
         });
-        t.add(playButton).expandX();
+        t.add(electroSurgeButton).expandX();
+
+        //move to next row
+        t.row();
+
+        //adding the Jackson5 button to the UI
+        Texture	Jackson5Texture	=	new	Texture(Gdx.files.internal("assets/Guitar.png"));
+        Button.ButtonStyle Jackson5Style	=	new Button.ButtonStyle();
+        Jackson5Style.up	=	new TextureRegionDrawable(new TextureRegion(Jackson5Texture));
+        Button	Jackson5Button	=	new	Button(	Jackson5Style);
+
+        Jackson5Button.addListener(new	InputListener()
+        {
+            public	boolean	touchDown	(InputEvent event, float	x, float	y, int	pointer, int	button)
+            {
+                game.setScreen(	new	Menu(game));
+                return	true;
+            }
+        });
+        t.add(Jackson5Button).expandX();
 
         //move to next row
         t.row();
@@ -68,7 +85,7 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
         Texture	exitTexture	=	new	Texture(Gdx.files.internal("assets/Exit.png"));
         Button.ButtonStyle exitStyle	=	new Button.ButtonStyle();
         exitStyle.up	=	new TextureRegionDrawable(new TextureRegion(exitTexture));
-        Button	exitButton	=	new	Button(	playStyle);
+        Button	exitButton	=	new	Button(	exitStyle);
 
         exitButton.addListener(new	InputListener()
         {

@@ -2,20 +2,20 @@ package com.mygdx.game;
 
 import	com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Texture;
 import	com.badlogic.gdx.scenes.scene2d.Actor;
 import	com.badlogic.gdx.scenes.scene2d.ui.Label;
 import	com.badlogic.gdx.scenes.scene2d.InputListener;
 import	com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.mygdx.game.utils.BaseActor;
-import com.mygdx.game.utils.BaseGame;
+import com.mygdx.game.utils.BaseScreen;
 
 import java.util.ArrayList;
 
-public	class	BeatzLevel	extends com.mygdx.game.utils.BaseScreen {
+public	class ElectroSurgeGame extends BaseScreen {
     private BaseActor background;
     private	float	spawnTimer;
     private	float	spawnInterval;
-    private int songNum;
     private	int	popped;
     private	int	missed;
     private	int	score;
@@ -29,20 +29,15 @@ public	class	BeatzLevel	extends com.mygdx.game.utils.BaseScreen {
     final	int	mapWidth	=	1280;
     final	int	mapHeight	=	600;
 
-    public	BeatzLevel(com.mygdx.game.utils.BaseGame g, int songNumber)
+    public ElectroSurgeGame(com.mygdx.game.utils.BaseGame g)
     {
         super(g);
 
-        songNum = songNumber;
+        //set background of the game
+        background.setTexture(new Texture(Gdx.files.internal("assets/tokyo.gif")));
+        uiStage.addActor(background);
 
-        FileHandle file;
-
-        if (songNum == 1)
-            file = Gdx.files.internal("Song1.txt");
-
-        else
-            file = Gdx.files.internal("Song2.txt");
-
+        FileHandle file = Gdx.files.internal("Song1.txt");
         String text = file.readString();
 
         //parsing through the CSV
@@ -95,13 +90,8 @@ public	class	BeatzLevel	extends com.mygdx.game.utils.BaseScreen {
         }
 
         //	update	user	interface
-        String song;
         //TODO: insert song details for each song as a header during the game
-        if (songNum == 1)
-            song = ""; //insert ElectroSurge info
-        else
-            song = ""; //insert Jackson5 info
-        songLabel.setText("Song:	"	+	song);
+        songLabel.setText("Song:	"	+	"ElectroSurge");
         scoreLabel.setText("Score:	"	+	score);
         streaksLabel.setText("Current Streak:	" ); //scorestreaks implementation
     }

@@ -19,13 +19,18 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
 
     public void create()
     {
+        //set background of start screen
         BaseActor background = new BaseActor();
         background.setTexture(new Texture(Gdx.files.internal("assets/soundwave.jpg")));
         uiStage.addActor(background);
+
+        //add title text to start screen
         BaseActor titleText	= new BaseActor();
         titleText.setTexture( new Texture(Gdx.files.internal("assets/Title.png"))	);
         titleText.setPosition(20,100	);
         uiStage.addActor(titleText);
+
+        //add instructions on how to start to start screen
         BitmapFont font = new	BitmapFont();
         String text = "Press SPACE To Play";
         LabelStyle style = new	LabelStyle(font, Color.PINK);
@@ -33,7 +38,7 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
         instructions.setFontScale(2);
         instructions.setPosition(100, 50);
 
-        //	repeating	color	pulse	effect
+        //	repeating	color	pulse	effect for instructions
         instructions.addAction(Actions.forever(Actions.sequence(Actions.color(	new	Color(1,1,0,1),	0.5f),
                 Actions.delay(0.5f),
                 Actions.color(new Color(0.5f, 0.5f, 0, 1),	0.5f))));

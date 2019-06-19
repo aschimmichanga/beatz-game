@@ -12,7 +12,7 @@ import	com.badlogic.gdx.InputMultiplexer;
 
 public abstract class BaseScreen implements	Screen,	InputProcessor
 {
-    protected com.mygdx.game.utils.BaseGame BaseGame;
+    protected com.mygdx.game.utils.BaseGame game;
     protected Stage	mainStage;
 
     protected Stage	uiStage;
@@ -25,7 +25,7 @@ public abstract class BaseScreen implements	Screen,	InputProcessor
 
     public	BaseScreen(BaseGame	g)
     {
-        BaseGame	=	g;
+        game	=	g;
         mainStage = new	Stage(	new	FitViewport(viewWidth,	viewHeight));
         uiStage	= new Stage(	new	FitViewport(viewWidth,	viewHeight));
         paused = false;

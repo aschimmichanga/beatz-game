@@ -1,6 +1,7 @@
-package com.mygdx.game;
+package com.mygdx.game.tester;
 //template for basic application
-import com.badlogic.gdx.BaseGame;
+
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
@@ -9,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Rectangle;
 
-public class SpriteTest extends BaseGame {
+public class SpriteTest extends Game {
     private SpriteBatch batch;
     private Sprite mouseySprite;
     private Sprite cheeseSprite;
