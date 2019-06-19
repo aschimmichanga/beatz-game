@@ -1,8 +1,8 @@
-package com.mygdx.game;
+package com.mygdx.game.tester;
 
 import com.badlogic.gdx.Gdx;
 
-public class Input
+public class InputTester
 {
     public static boolean onePressed;
     public static boolean twoPressed;
