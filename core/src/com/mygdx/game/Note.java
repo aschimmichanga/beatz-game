@@ -61,7 +61,7 @@ public class Note extends BaseActor {
   public double getTime() {
     return timeInSong;
   }
-
+-
   public int getFirstNote() {
     return firstNote;
   }
