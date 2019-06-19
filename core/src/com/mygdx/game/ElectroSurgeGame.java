@@ -10,6 +10,7 @@ import	com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.mygdx.game.utils.BaseActor;
 import com.mygdx.game.utils.BaseScreen;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 
 public	class ElectroSurgeGame extends BaseScreen {
@@ -37,6 +38,9 @@ public	class ElectroSurgeGame extends BaseScreen {
         background.setTexture(new Texture(Gdx.files.internal("assets/tokyo.gif")));
         uiStage.addActor(background);
 
+    }
+    public	void create()
+    {
         FileHandle file = Gdx.files.internal("Song1.txt");
         String text = file.readString();
 
@@ -46,31 +50,6 @@ public	class ElectroSurgeGame extends BaseScreen {
             int secondCommaIndex = text.substring(text.indexOf(",") + 1).indexOf(",");
             noteList.add(new Note(text.substring(0, secondCommaIndex)));
             text = text.substring(secondCommaIndex + 1);
-        }
-    }
-    public	void create()
-    {
-        Path path = Paths.get(fileName);
-        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            while (true)
-            {
-                String noteList = reader.readLine();
-                int charsRemaining = noteList.length();
-                int startingPt = 0;
-                int x = 0;
-               while (charsRemaining > 0)
-                {
-                        String note = noteList.substring(startingPt, ",") + (",", ",");
-                        noteList[x] = new Note(note);
-                        charsRemaining -= note.length();
-                        startingPt += note.length();
-                        x++;
-                }
-                if (line == null)
-                {
-                    break;
-                }
-            }
         }
     }
     public	void	update(float	dt)

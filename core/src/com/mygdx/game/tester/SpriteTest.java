@@ -1,5 +1,4 @@
 package com.mygdx.game.tester;
-//template for basic application
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -22,14 +21,20 @@ public class SpriteTest extends Game {
     {
         batch = new SpriteBatch();
 
-        mouseySprite = new Sprite( new Texture(Gdx.files.internal("mouse.png")) );
+        //creating and placing (previously) mouse sprite, now is guitar sprite
+        mouseySprite = new Sprite( new Texture(Gdx.files.internal("guitar.png")) );
         mouseySprite.setPosition( 20, 20 );
-        cheeseSprite = new Sprite( new Texture(Gdx.files.internal("cheese.png")) );
+
+        //creating and placing (previously) cheese sprite, now is sound sprite
+        cheeseSprite = new Sprite( new Texture(Gdx.files.internal("Sound.png")) );
         cheeseSprite.setPosition( 400, 300 );
 
-        floorSprite = new Sprite( new Texture(Gdx.files.internal("tiles.jpg")) );
+        //creating and placing background
+        floorSprite = new Sprite( new Texture(Gdx.files.internal("Soundwave.jpg")) );
         floorSprite.setPosition( 0, 0 );
-        winTextSprite = new Sprite( new Texture(Gdx.files.internal("you-win.png")) );
+
+        //creating and placing text that shows up when you "win" AKA the mouse touches the cheese
+        winTextSprite = new Sprite( new Texture(Gdx.files.internal("Beatz-Logo.png")) );
         winTextSprite.setPosition( 140, 80 );
         win = false;
     }
@@ -51,16 +56,19 @@ public class SpriteTest extends Game {
         Rectangle mouseyRectangle = mouseySprite.getBoundingRectangle();
         if ( cheeseRectangle.contains(mouseyRectangle) )
             win = true;
+
         //draw graphics
         Gdx.gl.glClearColor(0.8f, 0.8f, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
+
         floorSprite.draw( batch );
         cheeseSprite.draw( batch );
         mouseySprite.draw( batch );
         if (win)
-            winTextSprite.draw( batch );
+            winTextSprite.draw( batch ); //not drawn until the game is won
+
         batch.end();
     }
 }

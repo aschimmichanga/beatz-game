@@ -29,23 +29,15 @@ public class AudioTester implements ApplicationListener
     public void render()
     {
         music.play();
-
-
         update();
     }
 
     @Override
-    public void resize(int width, int height)
-    {
-
-    }
+    public void resize(int width, int height) { }
 
     @Override
-    public void pause() {
-    }
+    public void pause() { }
 
     @Override
-    public void resume() {
-    }
-
+    public void resume() { }
 }

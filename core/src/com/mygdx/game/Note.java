@@ -28,6 +28,7 @@ public class Note extends BaseActor {
       firstNote = tempNotes / 10;
       secondNote = tempNotes % 10;
     }
+
     timeInSong = calculateTime(notesAndTime.substring(notesAndTime.indexOf(",") + 1));
   }
 
@@ -61,7 +62,7 @@ public class Note extends BaseActor {
   public double getTime() {
     return timeInSong;
   }
--
+
   public int getFirstNote() {
     return firstNote;
   }
