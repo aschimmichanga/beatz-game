@@ -106,6 +106,10 @@ public	class ElectroSurgeScreen extends BaseScreen {
     }
     public void update(float dt)
     {
+
+    }
+    public void render (float dt)
+    {
         //using note.getTime() to know when to spawn
 
         int frameRate = (int)((1.0/dt) + 0.5);
@@ -152,7 +156,7 @@ public	class ElectroSurgeScreen extends BaseScreen {
                     if (character == (char)(n.getNote() + '0')) //does the number typed match the note number
                     {
                         float inaccuracy = (float) Math.abs(song.getSongPosition() - n.getSongPos());
-                        
+
                         /*
                             Scoring:
                             Perfect (500 pts): within 100 milliseconds of the song position
@@ -177,7 +181,7 @@ public	class ElectroSurgeScreen extends BaseScreen {
         for	(Actor a : uiStage.getActors())
         {
             if (a.getX() > mapWidth ||	a.getY() > mapHeight) //are sprites still on the screen
-            { 
+            {
                 missed++;
                 a.remove();
             }
@@ -185,5 +189,6 @@ public	class ElectroSurgeScreen extends BaseScreen {
 
         //	update	user	interface
         scoreLabel.setText("Score:	"	+	score);
+        uiStage.draw();
     }
 }
