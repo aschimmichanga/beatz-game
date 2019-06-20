@@ -51,6 +51,18 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
         pinkNote.setPosition(740,336);
         uiStage.addActor(pinkNote);
 
+        //adding decorative piano above instructions
+        BaseActor piano	= new BaseActor();
+        piano.setTexture( new Texture(Gdx.files.internal("Piano.png")));
+        piano.setPosition(950,200);
+        uiStage.addActor(piano);
+
+        //adding decorative harp above instructions
+        BaseActor harp	= new BaseActor();
+        harp.setTexture( new Texture(Gdx.files.internal("Harp.png")));
+        harp.setPosition(1100,100);
+        uiStage.addActor(harp);
+
         //add instructions on how to start to start screen
         BitmapFont font = new	BitmapFont();
         String text = "Press SPACE To Play";

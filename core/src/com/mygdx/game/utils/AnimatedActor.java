@@ -8,8 +8,10 @@ import	com.badlogic.gdx.graphics.g2d.Animation;
 import	com.badlogic.gdx.math.MathUtils;
 
 public	class AnimatedActor	extends BaseActor {
+
     public float elapsedTime;
     public Animation<Texture> anim;
+
     public AnimatedActor()
     {
         super();
@@ -32,7 +34,7 @@ public	class AnimatedActor	extends BaseActor {
 
     public void draw(Batch batch, float	parentAlpha)
     {
-        region.setRegion(anim.getKeyFrame(elapsedTime));
+        //region.setRegion(anim.getKeyFrame(elapsedTime));
         super.draw(batch, parentAlpha);
     }
 }
