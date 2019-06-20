@@ -39,14 +39,15 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
 
         //adding the title to the UI
         BaseActor a = new BaseActor();
-        background.setTexture(new Texture(Gdx.files.internal("assets/BeatzLogo.jpg")));
-        t.add(a).expandX();
+        background.setTexture(new Texture(Gdx.files.internal("assets/BeatzLogo.png")));
+        //t.add(a).expandX(); /commented this out for time being - Lissan
+        t.center();
 
         //move to next row
         t.row();
 
         //adding the Electrosurge button to the UI
-        Texture	electroSurgeTexture	=	new	Texture(Gdx.files.internal("assets/Guitar.png"));
+        Texture	electroSurgeTexture	=	new	Texture(Gdx.files.internal("assets/PinkGuitar.png"));
         Button.ButtonStyle electroSurgeStyle	=	new Button.ButtonStyle();
         electroSurgeStyle.up	=	new TextureRegionDrawable(new TextureRegion(electroSurgeTexture));
         Button	electroSurgeButton	=	new	Button(	electroSurgeStyle);
@@ -59,13 +60,14 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
                 return	true;
             }
         });
-        t.add(electroSurgeButton).expandX();
+        t.add(electroSurgeButton).padTop(10).padBottom(10);
+        t.center();
 
         //move to next row
         t.row();
 
         //adding the Jackson5 button to the UI
-        Texture	Jackson5Texture	=	new	Texture(Gdx.files.internal("assets/Guitar.png"));
+        Texture	Jackson5Texture	=	new	Texture(Gdx.files.internal("assets/PurpleGuitar.png"));
         Button.ButtonStyle Jackson5Style	=	new Button.ButtonStyle();
         Jackson5Style.up	=	new TextureRegionDrawable(new TextureRegion(Jackson5Texture));
         Button	Jackson5Button	=	new	Button(	Jackson5Style);
@@ -79,6 +81,7 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
             }
         });
         t.add(Jackson5Button).expandX();
+        t.center();
 
         //move to next row
         t.row();
@@ -100,6 +103,7 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
         });
 
         t.add(exitButton).expandX();
+        t.center();
 
 
 
@@ -120,5 +124,6 @@ public class Menu extends com.mygdx.game.utils.BaseScreen
                 Actions.color(new Color(0.5f, 0.5f, 0, 1),	0.5f))));
         uiStage.addActor(instructions);
     }
-    public void update(float dt) { } //	InputProcessor	methods	for	handling	discrete	input
+
+    public void update(float dt) { } //	Empty method for class to work - Lissan
 }
