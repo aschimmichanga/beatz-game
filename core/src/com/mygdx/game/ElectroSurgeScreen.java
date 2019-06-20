@@ -67,9 +67,10 @@ public	class ElectroSurgeScreen extends BaseScreen {
 
         FileHandle file = Gdx.files.internal("Song1.txt");
         String text = file.readString();
+        noteList = new ArrayList<Note>();
 
         //parsing through the CSV
-        while (text.charAt(0) != '!')
+        while (text != null)
         {
             noteList.add(new Note(text.substring(0, 3), 0.470f));
             text = text.substring(4);
