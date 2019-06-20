@@ -19,9 +19,10 @@ import java.util.ArrayList;
 
 //ASHNA
 
-public	class ElectroSurgeScreen extends BaseScreen {
+public	class ElectroSurgeScreen extends BaseScreen
+{
     private	float	spawnTimer;
-    private	final float	spawnInterval = .470f;
+    private	final float	spawnInterval = .612f;
     private	int	missed;
     private	int	score;
     private	Label	songLabel;
@@ -74,7 +75,7 @@ public	class ElectroSurgeScreen extends BaseScreen {
         BitmapFont font = new BitmapFont();
         Label.LabelStyle style = new Label.LabelStyle(font, Color.WHITE);
 
-        songLabel = new Label("Current Song: Surge - Noisestorm", style);
+        songLabel = new Label("Current Song: Want You Back - Jackson5", style);
         songLabel.setPosition(16, 540);
         uiStage.addActor(songLabel);
 
@@ -84,22 +85,22 @@ public	class ElectroSurgeScreen extends BaseScreen {
 
         noteList = new ArrayList<Note>();
 
-        FileHandle file = Gdx.files.internal("Song1.txt");
+        FileHandle file = Gdx.files.internal("Song2.txt");
         String text = file.readString();
 
         //parsing through the CSV
         while (text != null && text.length() > 3)
         {
-            noteList.add(new Note(text.substring(0, 3), 0.470f));
+            noteList.add(new Note(text.substring(0, 3), 0.612f));
             text = text.substring(4);
         }
 
         if (text != null && text.length() == 3)
-            noteList.add(new Note(text, 0.470f));
+            noteList.add(new Note(text, 0.612f));
     }
     public	void create()
     {
-        song = new Song("ElectroSurge.mp3", 0, 128, 0.470f);
+        song = new Song("ElectroSurge.mp3", 0, 128, 0.612f);
         song.getMusic().play();
 
 
@@ -116,8 +117,7 @@ public	class ElectroSurgeScreen extends BaseScreen {
         int speed = (int)((Note.startingHeight/frameRate)+ 0.5) * -1;
 
         spawnTimer	+=	dt;				//	check time for next
-        if	(spawnTimer	> spawnInterval)
-        {
+        if(spawnTimer > spawnInterval){
             spawnTimer -= spawnInterval;
             final Note n = noteList.get(0);
 
@@ -148,6 +148,7 @@ public	class ElectroSurgeScreen extends BaseScreen {
             Action moveDown = Actions.moveBy(0,speed);
             n.addAction(moveDown);
             n.act(dt);
+            uiStage.act(dt);
 
             n.addListener(new InputListener()
             {
