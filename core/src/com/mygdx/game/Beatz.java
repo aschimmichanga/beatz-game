@@ -1,6 +1,6 @@
 package com.mygdx.game;
 
-//DEFAULT (FOR TESTERS)
+//DEFAULT CLASS (TO MAKE SURE LIB GDX WORKS) (COMES WITH SOFTWARE)
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;

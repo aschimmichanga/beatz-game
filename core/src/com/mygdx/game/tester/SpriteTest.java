@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Rectangle;
 
+//ASHNA
+
 public class SpriteTest extends Game {
     private SpriteBatch batch;
     private Sprite mouseySprite;
@@ -22,7 +24,7 @@ public class SpriteTest extends Game {
         batch = new SpriteBatch();
 
         //creating and placing (previously) mouse sprite, now is guitar sprite
-        mouseySprite = new Sprite( new Texture(Gdx.files.internal("guitar.png")) );
+        mouseySprite = new Sprite( new Texture(Gdx.files.internal("PurpleGuitar.png")) );
         mouseySprite.setPosition( 20, 20 );
 
         //creating and placing (previously) cheese sprite, now is sound sprite
@@ -30,11 +32,11 @@ public class SpriteTest extends Game {
         cheeseSprite.setPosition( 400, 300 );
 
         //creating and placing background
-        floorSprite = new Sprite( new Texture(Gdx.files.internal("Soundwave.jpg")) );
+        floorSprite = new Sprite( new Texture(Gdx.files.internal("neon.jpg")) );
         floorSprite.setPosition( 0, 0 );
 
         //creating and placing text that shows up when you "win" AKA the mouse touches the cheese
-        winTextSprite = new Sprite( new Texture(Gdx.files.internal("Beatz-Logo.png")) );
+        winTextSprite = new Sprite( new Texture(Gdx.files.internal("BeatzLogo.png")) );
         winTextSprite.setPosition( 140, 80 );
         win = false;
     }
@@ -42,14 +44,14 @@ public class SpriteTest extends Game {
     public void render()
     {
         // process input
-        if (Gdx.input.isKeyPressed(Keys.LEFT))
-            mouseySprite.translateX( -1 );
-        if (Gdx.input.isKeyPressed(Keys.RIGHT))
-            mouseySprite.translateX( 1 );
-        if (Gdx.input.isKeyPressed(Keys.UP))
-            mouseySprite.translateY( 1 );
-        if (Gdx.input.isKeyPressed(Keys.DOWN))
-            mouseySprite.translateY( -1 );
+        if (Gdx.input.isKeyJustPressed(Keys.LEFT))
+            mouseySprite.translateX( -100 );
+        if (Gdx.input.isKeyJustPressed(Keys.RIGHT))
+            mouseySprite.translateX( 100 );
+        if (Gdx.input.isKeyJustPressed(Keys.UP))
+            mouseySprite.translateY( 50 );
+        if (Gdx.input.isKeyJustPressed(Keys.DOWN))
+            mouseySprite.translateY( -100 );
 
         // check win condition
         Rectangle cheeseRectangle = cheeseSprite.getBoundingRectangle();

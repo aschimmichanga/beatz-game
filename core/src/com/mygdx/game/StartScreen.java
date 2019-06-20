@@ -8,7 +8,10 @@ import	com.badlogic.gdx.scenes.scene2d.ui.Label;
 import	com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import	com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import	com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.mygdx.game.utils.BaseActor;
+
+//ASHNA
 
 public class StartScreen extends com.mygdx.game.utils.BaseScreen
 {
@@ -24,11 +27,14 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
         background.setTexture(new Texture(Gdx.files.internal("assets/soundwave.jpg")));
         uiStage.addActor(background);
 
+        //add table (formatting everything like CSS)
+        Table t = new Table();
+        t.setFillParent(true);
+
         //add title text to start screen
         BaseActor titleText	= new BaseActor();
         titleText.setTexture( new Texture(Gdx.files.internal("assets/Title.png"))	);
-        titleText.setPosition(20,100	);
-        uiStage.addActor(titleText);
+        t.add(titleText);
 
         //add instructions on how to start to start screen
         BitmapFont font = new	BitmapFont();

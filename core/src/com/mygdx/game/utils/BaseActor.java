@@ -9,6 +9,8 @@ import	com.badlogic.gdx.graphics.g2d.TextureRegion;
 import	com.badlogic.gdx.math.Rectangle;
 import	com.badlogic.gdx.graphics.Color;
 
+//ASHNA
+
 public	class	BaseActor	extends	Actor {
     public	TextureRegion region;
     public	Rectangle boundary;
@@ -18,7 +20,7 @@ public	class	BaseActor	extends	Actor {
     public	BaseActor()
     {
         super();
-        region = new	TextureRegion();
+        region = new TextureRegion();
         boundary =	new	Rectangle();
         velocityX =	0;
         velocityY =	0;

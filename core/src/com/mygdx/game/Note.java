@@ -2,33 +2,25 @@ package com.mygdx.game;
 //ASHNA
 
 import com.mygdx.game.utils.BaseActor;
+import com.mygdx.game.utils.PhysicsActor;
 
-public class Note extends BaseActor {
-  private int firstNote;
-  private int secondNote;
+public class Note extends PhysicsActor {
+  private int note;
   private double timeInSong; //what song position the note occurs at
 
   //x positions of each note TODO
-  final int initX1 = 0;
-  final int initX2 = 0;
-  final int initX3 = 0;
-  final int initX4 = 0;
+  public static final int X1 = 256;
+  public static final int X2 = 416;
+  public static final int X3 = 576;
+  public static final int X4 = 736;
+
+  public static final int startingHeight = 466;
 
   public Note(String notesAndTime) {
-    //initialization
-    firstNote = 0;
-    //single note: note1,time,
-    secondNote = 0;
-    timeInSong = 0;
-
-    //file formatting template for reference:
-    //double note: note1note2,time,
-    int tempNotes = Integer.parseInt(notesAndTime.substring(0, notesAndTime.indexOf(",")));
-    if (tempNotes > 4) {
-      firstNote = tempNotes / 10;
-      secondNote = tempNotes % 10;
-    }
-
+    //txt file formatting template for reference:
+    //note,time,
+    
+    note = Integer.parseInt(notesAndTime.substring(0, notesAndTime.indexOf(",")));
     timeInSong = calculateTime(notesAndTime.substring(notesAndTime.indexOf(",") + 1));
   }
 
@@ -49,12 +41,8 @@ public class Note extends BaseActor {
     timeInSong = calculateTime(time);
   }
 
-  public void setFirstNote(int first) {
-    firstNote = first;
-  }
-
-  public void setSecondNote(int second) {
-    secondNote = second;
+  public void setNote(int n) {
+    note = n;
   }
 
 
@@ -63,13 +51,8 @@ public class Note extends BaseActor {
     return timeInSong;
   }
 
-  public int getFirstNote() {
-    return firstNote;
-  }
-
-  public int getSecondNote() {
-    return secondNote;
-    //check if it's a single note or not by checking if getSecondNote() returns 0
+  public int getNote() {
+    return note;
   }
 }
 

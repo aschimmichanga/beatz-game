@@ -4,6 +4,8 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.mygdx.game.Song;
 
+//OLIVIA/ASHNA
+
 public class SongPosTester  implements ApplicationListener
 {
     private Song x;
@@ -66,8 +68,6 @@ public class SongPosTester  implements ApplicationListener
     @Override
     public void render() {
         x.getMusic().play();
-
-
         update();}
 
     @Override

@@ -2,6 +2,8 @@ package com.mygdx.game.tester;
 
 import com.badlogic.gdx.Gdx;
 
+//OLIVIA/ASHNA
+
 public class InputTester
 {
     public static boolean onePressed;
@@ -27,22 +29,22 @@ public class InputTester
         fourReleased = false;
 
         //if pressed
-        if (Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.NUM_1))
+        if (Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.NUM_1))
         {
             onePressed = true;
             oneReleased = false;
         }
-        if (Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.NUM_2))
+        if (Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.NUM_2))
         {
             twoPressed = true;
             twoReleased = false;
         }
-        if (Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.NUM_3))
+        if (Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.NUM_3))
         {
             threePressed = true;
             threeReleased = false;
         }
-        if (Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.NUM_4))
+        if (Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.NUM_4))
         {
             fourPressed = true;
             fourReleased = false;

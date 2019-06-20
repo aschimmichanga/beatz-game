@@ -12,6 +12,8 @@ import com.mygdx.game.utils.BaseScreen;
 
 import java.util.ArrayList;
 
+//ASHNA
+
 public	class Jackson5Game extends BaseScreen {
     private BaseActor background;
     private	float	spawnTimer;
@@ -69,7 +71,7 @@ public	class Jackson5Game extends BaseScreen {
             {
                 public boolean keyTyped(InputEvent event, char character)
                 {
-                    if (character == (char)(n.getFirstNote() + '0'))
+                    if (character == (char)(n.getNote() + '0'))
                     {
                         //score streaks implementation
                         n.remove();

@@ -1,10 +1,10 @@
 package com.mygdx.game.utils;
 
-//ASHNA
-
 import com.badlogic.gdx.math.MathUtils;
 import	com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.utils.AnimatedActor;
+
+//ASHNA
 
 public	class	PhysicsActor	extends AnimatedActor
 {
@@ -31,6 +31,7 @@ public	class	PhysicsActor	extends AnimatedActor
     {
         velocity.add(vx,vy);
     }
+
     //	set	velocity	from	angle	and	speed
     	public	void	setVelocityAS(float	angleDeg,	float	speed)
     	{

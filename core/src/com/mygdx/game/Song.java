@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 
-//OLIVIA/ANUHYA
+//ASHNA/OLIVIA/ANUHYA
 public class Song
 {
     private String fileName; // "xxx.mp3"
@@ -16,14 +16,17 @@ public class Song
     private ArrayList<Note> beatmap;
     private Music music;
 
-    public Song(String file, float o, int b)
+    public Song(String file, float offSet, int beatsPerMin)
     {
         fileName = file;
-        offset = o;
-        bpm = b;
+        offset = offSet;
+        bpm = beatsPerMin;
+
         music = Gdx.audio.newMusic(Gdx.files.internal(fileName));
-        songPosition = music.getPosition() / 60.0f * bpm - offset; //calculates what beat it's at out of total beats,
-        // assuming pos is in seconds
+
+        //calculate what beat it's at out of total beats, assuming pos is in seconds
+        songPosition = music.getPosition() / 60.0f * bpm - offset;
+
         beatLength =  60.0f / bpm;
         beatmap = new ArrayList<Note>();
 
