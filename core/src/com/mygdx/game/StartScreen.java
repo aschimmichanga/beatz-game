@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import	com.badlogic.gdx.Input.Keys;
 import	com.badlogic.gdx.graphics.Color;
@@ -15,7 +16,7 @@ import com.mygdx.game.utils.BaseActor;
 
 public class StartScreen extends com.mygdx.game.utils.BaseScreen
 {
-    public StartScreen (com.mygdx.game.utils.BaseGame g)
+    public StartScreen (Game g)
     {
         super(g);
     }
@@ -24,17 +25,31 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
     {
         //set background of start screen
         BaseActor background = new BaseActor();
-        background.setTexture(new Texture(Gdx.files.internal("assets/soundwave.jpg")));
+        background.setTexture(new Texture(Gdx.files.internal("Soundwave.jpg")));
+        background.setPosition(0,0);
         uiStage.addActor(background);
-
-        //add table (formatting everything like CSS)
-        Table t = new Table();
-        t.setFillParent(true);
 
         //add title text to start screen
         BaseActor titleText	= new BaseActor();
-        titleText.setTexture( new Texture(Gdx.files.internal("assets/Title.png"))	);
-        t.add(titleText);
+        titleText.setTexture( new Texture(Gdx.files.internal("BeatzLogo.png")));
+        titleText.setPosition(240,25);
+        uiStage.addActor(titleText);
+
+        //add decorative music notes to start screen
+        BaseActor blueNote	= new BaseActor();
+        blueNote.setTexture( new Texture(Gdx.files.internal("BlueNote.png")));
+        blueNote.setPosition(96,336);
+        uiStage.addActor(blueNote);
+
+        BaseActor purpleNote	= new BaseActor();
+        purpleNote.setTexture( new Texture(Gdx.files.internal("PurpleNote.png")));
+        purpleNote.setPosition(410,600);
+        uiStage.addActor(purpleNote);
+
+        BaseActor pinkNote	= new BaseActor();
+        pinkNote.setTexture( new Texture(Gdx.files.internal("PinkNote.png")));
+        pinkNote.setPosition(740,336);
+        uiStage.addActor(pinkNote);
 
         //add instructions on how to start to start screen
         BitmapFont font = new	BitmapFont();
@@ -42,7 +57,7 @@ public class StartScreen extends com.mygdx.game.utils.BaseScreen
         LabelStyle style = new	LabelStyle(font, Color.PINK);
         Label instructions = new Label(text, style);
         instructions.setFontScale(2);
-        instructions.setPosition(100, 50);
+        instructions.setPosition(900, 50);
 
         //	repeating	color	pulse	effect for instructions
         instructions.addAction(Actions.forever(Actions.sequence(Actions.color(	new	Color(1,1,0,1),	0.5f),

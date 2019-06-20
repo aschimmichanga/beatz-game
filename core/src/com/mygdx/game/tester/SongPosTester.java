@@ -12,7 +12,7 @@ public class SongPosTester  implements ApplicationListener
 
     public void create()
     {
-        x = new Song("ElectroSurge.mp3", 0, 128);
+        x = new Song("ElectroSurge.mp3", 0, 128, 0.470f);
         boolean playing;
 
         x.getMusic().play();

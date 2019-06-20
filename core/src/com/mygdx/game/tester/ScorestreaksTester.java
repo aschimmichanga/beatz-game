@@ -18,20 +18,11 @@ public class ScorestreaksTester implements ApplicationListener {
 
     public void create()
     {
-        //TODO: put a listener here for pressing SPACE to set arrival time
-
-        song = new Song("ElectroSurge.mp3", 0, 128);
+        song = new Song("ElectroSurge.mp3", 0, 128, 0.470f);
 
 
 
         startTime = System.currentTimeMillis();
-
-        //TODO: put a log print statement here for printing the note info and setting the note time
-
-        //timeElapsed = arrivalTime - noteTime;a
-
-
-
     }
 
     @Override
@@ -61,7 +52,8 @@ public class ScorestreaksTester implements ApplicationListener {
                 Gdx.app.log("Scorestreak","Miss :(");
             }
 
-            Gdx.app.log("Scores", "Perfect: " + perfect + "\nGood: " + good + "\nMiss: " + miss);
+            Gdx.app.log("Scores",
+                    "Score: " + scoreValue + "Perfect: " + perfect + "\nGood: " + good + "\nMiss: " + miss);
         }
 
 

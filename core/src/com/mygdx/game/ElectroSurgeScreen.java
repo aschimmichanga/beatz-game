@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 //ASHNA
 
-public	class ElectroSurgeGame extends BaseScreen {
+public	class ElectroSurgeScreen extends BaseScreen {
     private	float	spawnTimer;
     private	final float	spawnInterval = .001f;
     private	int	missed;
@@ -33,7 +34,7 @@ public	class ElectroSurgeGame extends BaseScreen {
     private final int mapWidth	= 1280;
     private final int mapHeight = 600;
 
-    public ElectroSurgeGame(com.mygdx.game.utils.BaseGame g)
+    public ElectroSurgeScreen(Game g)
     {
         super(g);
 
@@ -42,54 +43,42 @@ public	class ElectroSurgeGame extends BaseScreen {
 
         //set background of the game
         BaseActor background = new BaseActor();
-        background.setTexture(new Texture(Gdx.files.internal("assets/tokyo.gif")));
+        background.setTexture(new Texture(Gdx.files.internal("tokyo.gif")));
         uiStage.addActor(background);
 
+
+        //add labels
 
         BitmapFont font = new BitmapFont();
         Label.LabelStyle style = new Label.LabelStyle(font, Color.WHITE);
 
-
         songLabel = new Label("Current Song: Surge - Noisestorm", style);
-        songLabel.setPosition(0,0);
+        songLabel.setPosition(16, 540);
+        uiStage.addActor(songLabel);
+
         scoreLabel = new Label("Score: ", style);
+        scoreLabel.setPosition(16, 510);
+        uiStage.addActor(scoreLabel);
 
     }
     public	void create()
     {
+        song = new Song("ElectroSurge.mp3", 0, 128, 0.470f);
+
         FileHandle file = Gdx.files.internal("Song1.txt");
         String text = file.readString();
 
         //parsing through the CSV
-        while (text.contains(","))
+        while (text.charAt(0) != '!')
         {
-            int secondCommaIndex = text.substring(text.indexOf(",") + 1).indexOf(",");
-            noteList.add(new Note(text.substring(0, secondCommaIndex)));
-            text = text.substring(secondCommaIndex + 1);
+            noteList.add(new Note(text.substring(0, 3), 0.470f));
+            text = text.substring(4);
         }
 
-        song = new Song("ElectroSurge.mp3", 0, 128);
+
         song.getMusic().play();
 
-        BaseActor hit1 = new BaseActor();
-        hit1.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-        hit1.setPosition(Note.X1,0);
-        uiStage.addActor(hit1);
 
-        BaseActor hit2 = new BaseActor();
-        hit2.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-        hit2.setPosition(Note.X2,0);
-        uiStage.addActor(hit2);
-
-        BaseActor hit3 = new BaseActor();
-        hit3.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-        hit3.setPosition(Note.X3,0);
-        uiStage.addActor(hit3);
-
-        BaseActor hit4 = new BaseActor();
-        hit4.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-        hit4.setPosition(Note.X4,0);
-        uiStage.addActor(hit4);
     }
     public void update(float dt)
     {
@@ -103,28 +92,7 @@ public	class ElectroSurgeGame extends BaseScreen {
             spawnTimer -= spawnInterval;
             final Note n = noteList.get(0);
 
-            n.setVelocityAS(-90, speed);
-
-            //checking which note it is (1,2,3,4) and assigning the appropriate image
-            switch (n.getNote())
-            {
-                case 1:
-                    n.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-                    n.setPosition(Note.X1, Note.startingHeight);
-                    break;
-                case 2:
-                    n.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-                    n.setPosition(Note.X2, Note.startingHeight);
-                    break;
-                case 3:
-                    n.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-                    n.setPosition(Note.X3, Note.startingHeight);
-                    break;
-                case 4:
-                    n.setTexture(new Texture(Gdx.files.internal("Speaker.gif")));
-                    n.setPosition(Note.X4, Note.startingHeight);
-                    break;
-            }
+            n.setSpeed(speed);
 
             uiStage.addActor(n);
 
@@ -132,18 +100,13 @@ public	class ElectroSurgeGame extends BaseScreen {
             Action moveDown = Actions.moveBy(0,speed);
             n.addAction(moveDown);
 
-            while (n.getX() < mapHeight)
-            {
-                n.velocityX += 100;
-            }
-
             n.addListener(new InputListener()
             {
                 public boolean keyTyped(InputEvent event, char character)
                 {
                     if (character == (char)(n.getNote() + '0')) //does the number typed match the note number
                     {
-                        float inaccuracy = (float) Math.abs(song.getSongPosition() - n.getTime());
+                        float inaccuracy = (float) Math.abs(song.getSongPosition() - n.getSongPos());
                         
                         /*
                             Scoring:

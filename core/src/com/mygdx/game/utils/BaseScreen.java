@@ -1,29 +1,26 @@
 package com.mygdx.game.utils;
 
-import	com.badlogic.gdx.Screen;
-import	com.badlogic.gdx.InputProcessor;
-import	com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.*;
 import	com.badlogic.gdx.graphics.GL20;
 import	com.badlogic.gdx.scenes.scene2d.Stage;
 import	com.badlogic.gdx.utils.viewport.FitViewport;
-import	com.badlogic.gdx.InputMultiplexer;
 
 //ASHNA
 
 public abstract class BaseScreen implements	Screen,	InputProcessor
 {
-    protected com.mygdx.game.utils.BaseGame game;
+    protected Game game;
     protected Stage	mainStage;
 
     protected Stage	uiStage;
 
-    //BaseGame window dimensions
+    //Game window dimensions
     public final int viewWidth	= 1280;
     public final int viewHeight	= 800;
 
     private	boolean	paused;
 
-    public	BaseScreen(BaseGame	g)
+    public	BaseScreen(Game g)
     {
         game	=	g;
         mainStage = new	Stage(	new	FitViewport(viewWidth,	viewHeight));
@@ -36,11 +33,11 @@ public abstract class BaseScreen implements	Screen,	InputProcessor
 
     public	abstract	void	create();
     public	abstract	void	update(float dt);
-    //	BaseGame loop	code;	update,	then render.
+    //	Game loop	code;	update,	then render.
     public	void	render(float	dt)
     {
         uiStage.act(dt);
-    //	only	pause	BaseGameplay	events,	not	UI	events
+    //	only	pause	Gameplay	events,	not	UI	events
         if	(	!isPaused()	)
         {
             mainStage.act(dt);

@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import	com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 //ASHNA
 
-public	class Jackson5Game extends BaseScreen {
+public	class Jackson5Screen extends BaseScreen {
     private BaseActor background;
     private	float	spawnTimer;
     private	float	spawnInterval;
@@ -31,13 +32,15 @@ public	class Jackson5Game extends BaseScreen {
     final	int	mapWidth	=	1280;
     final	int	mapHeight	=	600;
 
-    public Jackson5Game(com.mygdx.game.utils.BaseGame g)
+    public Jackson5Screen(Game g)
     {
         super(g);
 
         //set background of the game
-        background.setTexture(new Texture(Gdx.files.internal("assets/neon.gif")));
+        background.setTexture(new Texture(Gdx.files.internal("neon.gif")));
         uiStage.addActor(background);
+
+
 
 
         FileHandle file = Gdx.files.internal("Song2.txt");
@@ -48,7 +51,7 @@ public	class Jackson5Game extends BaseScreen {
         while (text.contains(","))
         {
             int secondCommaIndex = text.substring(text.indexOf(",") + 1).indexOf(",");
-            noteList.add(new Note(text.substring(0, secondCommaIndex)));
+            noteList.add(new Note(text.substring(0, secondCommaIndex), 00.612f));
             text = text.substring(secondCommaIndex + 1);
         }
     }

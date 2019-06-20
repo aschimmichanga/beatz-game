@@ -12,6 +12,7 @@ public	class	PhysicsActor	extends AnimatedActor
     private	Vector2	acceleration;				//	maximum	speed
     private	float	maxSpeed;				//	speed	reduction,	in	pixels/second,	when	not	accelerating
     private	float	deceleration;				//	should	image	rotate	to	match	velocity?
+
     private	boolean	autoAngle;
      public	PhysicsActor()
      {
