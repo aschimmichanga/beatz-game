@@ -1,3 +1,3 @@
 3,q,2,h2,h2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,q,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,1,w,1,w,1,w,1,w,2,h,2,h,2,h,2,h,3,q,3,q,3,q,3,q,3,q,3,q,4,h,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,4,w,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,4,w,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,1,w,1,w,1,w,1,w,1,w,1,w,1,w,1,w,1,q,1,q,2,w,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,h,2,q,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,h,1,q,1,q,1,w,1,w,1,w,1,w,2,h,2,h,2,h,2,q,3,q,3,q,3,q,3,q,3,q,3,q,3,h,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,4,w,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,2,h,3,q,1,q,2,h,3,h,4,h,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,2,w,4,w,2,w,1,w,2,w,2,w,2,w,2,w,2,w,2,w,2,h
 
-Title: Surge, Artist: Noisestorm, Length: 03:59, Genre: Dance/Electronic
+Base Interval: 00:00.470, Title: Surge, Artist: Noisestorm, Length: 03:59, Genre: Dance/Electronic
